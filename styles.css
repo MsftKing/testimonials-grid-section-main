@@ -20,18 +20,18 @@ body {
     width: 100%;
     justify-content: center;
     place-content: center;
-    font-family: "Barlow Semi Condensed";
+    font-family: "Barlow Semi Condensed", sans-serif;
     font-size: 14px;
     background-color: rgb(168, 206, 211);
     color: white;
-    overflow: hidden;
 }
 
 div[class*="box"]{
     padding: 1em;
     margin: 1em;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 0;
+    align-items: left;
 }
 
 .container {
@@ -87,13 +87,6 @@ div[class*="box"]{
     color: black;
 }
 
-.nameContainer {
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
 .profilePic {
     border-radius: 50%;
     border: 1px solid white;
@@ -104,8 +97,10 @@ div[class*="box"]{
 
 .design {
     z-index: -1;
-    justify-self: end;    /* Align to right horizontally */
-    align-self: start;   /* Align to top vertically */
+    position: absolute;
+    left: 425px;
+    bottom: -20px;
+    transform: scale(1.5);
 }
 
 div.boxHeader {
@@ -115,6 +110,14 @@ div.boxHeader {
     margin-right: auto;
     padding: 0;
 }
+
+.nameContainer {
+    display: block;
+    align-items: center;
+    position: relative;
+    padding: 1em;
+}
+
 
 .name {
     font-weight: 500;
@@ -130,3 +133,59 @@ section {
     margin-bottom: 1em;
     padding: 1em
 }
+
+p[class="description"] {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+/*Styling the credit section */
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+a:hover{
+    color: white;
+}
+
+/* Responsive design */
+@media (min-width: 375px) and (max-width: 1024px) {
+    .design{
+        display: none;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .nameContainer {
+        display: block;
+    }
+
+    .name {
+        position: absolute;
+        left: 4em;
+        bottom: 3em;
+    }
+    .verifiedUser {
+        position: relative;
+        left: 3.4em;
+        bottom: 1em;
+        max-width: fit-content;
+    }
+}
+    
+@media (min-width: 1024px) and (max-width: 1900px) {
+        .design {
+            display: none;
+        }
+    }
