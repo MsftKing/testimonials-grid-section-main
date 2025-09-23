@@ -16,7 +16,7 @@
 body {
     display: block;
     position: absolute;
-    height: 100vh;
+    min-height: 80vh;
     width: 100%;
     justify-content: center;
     place-content: center;
@@ -24,6 +24,7 @@ body {
     font-size: 14px;
     background-color: rgb(168, 206, 211);
     color: white;
+    overflow-x: hidden;
 }
 
 div[class*="box"]{
@@ -37,8 +38,7 @@ div[class*="box"]{
 .container {
     display: grid;
     grid-template: repeat(8 1fr) / repeat(4 2fr);
-    max-width: 75vw;
-    max-height: 75vh;
+    width: 80vw;
     margin: auto;
     padding: auto;
 }
